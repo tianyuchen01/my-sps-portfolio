@@ -26,3 +26,9 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function showStayCurious() {
+    const stayCurious = "✨Stay curious!✨";
+    const curiousContainer = document.getElementById('curious-container');
+    curiousContainer.innerText = stayCurious;
+}
