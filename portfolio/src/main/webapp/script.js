@@ -32,3 +32,14 @@ function showStayCurious() {
     const curiousContainer = document.getElementById('curious-container');
     curiousContainer.innerText = stayCurious;
 }
+
+/**
+ * Fetches the Hello greeting from the server and adds it to the page.
+ */
+async function showHelloString() {
+    const responseFromServer = await fetch('/hello');
+    const textFromResponse = await responseFromServer.text();
+
+    const helloContainer = document.getElementById('hello-container');
+    helloContainer.innerText = textFromResponse;
+}
