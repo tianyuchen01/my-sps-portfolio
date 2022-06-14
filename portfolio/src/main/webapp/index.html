@@ -46,13 +46,23 @@
       </p>
 
       <h2>Server</h2>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-
+      <p>
+          Click <a href="/hello">here</a> to see content created by 
+          server code (HelloWorldServlet).
+      </p>
       <button onclick="showHelloString();">hello from server</button>
       <p id="hello-container"></p>
+
+      <p>
+          Click <a href="/random">here</a> to see content created by 
+          server code (RandomMsgServlet).
+      </p>
+      <button onclick="showRandomFacts();">see a random fact about me</button>
+      <p id="random-fact-container"></p>
+
+      <p>Click below to get a random greeting message (completely JavaScript, given):</p>
+      <button onclick="addRandomGreeting()">Hello</button>
+      <div id="greeting-container"></div>
     </div>
   </body>
 </html>

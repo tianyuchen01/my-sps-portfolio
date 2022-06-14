@@ -43,3 +43,20 @@ async function showHelloString() {
     const helloContainer = document.getElementById('hello-container');
     helloContainer.innerText = textFromResponse;
 }
+
+async function showRandomFacts() {
+    const responseFromServer = await fetch('/random');
+    const facts = await responseFromServer.json();
+
+    const randomFactContainer = document.getElementById('random-fact-container');
+    const randomIdx = Math.floor(Math.random() * 3);
+    if (randomIdx == 0) {
+        randomFactContainer.innerText = facts.learning;
+    }
+    else if (randomIdx == 1) {
+        randomFactContainer.innerText = facts.programmingLanguage;
+    }
+    else if (randomIdx == 2) {
+        randomFactContainer.innerText = facts.animal;
+    }
+}
