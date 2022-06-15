@@ -1,5 +1,6 @@
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,17 +31,9 @@ public class RandomMsgServlet extends HttpServlet {
    * @param list an ArrayList of String
    * @return the json encoding String of the ArrayList of String
    */
-  public String convertToJson(ArrayList<String> list) {
-    String json = "{";
-    json += "\"learning\": ";
-    json += "\"" + list.get(0) + "\"";
-    json += ", ";
-    json += "\"programmingLanguage\": ";
-    json += "\"" + list.get(1) + "\"";
-    json += ", ";
-    json += "\"animal\": ";
-    json += "\"" + list.get(2) + "\"";
-    json += "}";
+  private String convertToJson(ArrayList<String> list) {
+    Gson gson = new Gson();
+    String json = gson.toJson(list);
     return json;
   }
 }

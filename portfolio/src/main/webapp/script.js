@@ -58,14 +58,6 @@ async function showRandomFacts() {
     const randomFactContainer = document.getElementById('random-fact-container');
 
     // Create random effect for the content of the button
-    const randomIdx = Math.floor(Math.random() * 3);
-    if (randomIdx == 0) {
-        randomFactContainer.innerText = facts.learning;
-    }
-    else if (randomIdx == 1) {
-        randomFactContainer.innerText = facts.programmingLanguage;
-    }
-    else if (randomIdx == 2) {
-        randomFactContainer.innerText = facts.animal;
-    }
+    const randomIdx = Math.floor(Math.random() * facts.length);
+    randomFactContainer.innerText = facts[randomIdx];
 }
