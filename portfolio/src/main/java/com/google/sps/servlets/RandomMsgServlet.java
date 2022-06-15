@@ -18,11 +18,18 @@ public class RandomMsgServlet extends HttpServlet {
     messages.add("I like Java.");
     messages.add("I like cats.");
 
+    // Convert the ArrayList to json string and print the string
     String jsonMsgs = convertToJson(messages);
     response.setContentType("application/json;");
     response.getWriter().println(jsonMsgs);
   }
 
+  /**
+   * Convert an ArrayList of String to its json encoding.
+   * 
+   * @param list an ArrayList of String
+   * @return the json encoding String of the ArrayList of String
+   */
   public String convertToJson(ArrayList<String> list) {
     String json = "{";
     json += "\"learning\": ";
