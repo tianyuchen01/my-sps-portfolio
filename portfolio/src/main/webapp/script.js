@@ -13,7 +13,7 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Add a random greeting to the page.
  */
 function addRandomGreeting() {
   const greetings =
@@ -27,8 +27,37 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+/**
+ * Add to the page a hard-coded string "Stay curious!"
+ */
 function showStayCurious() {
     const stayCurious = "✨Stay curious!✨";
     const curiousContainer = document.getElementById('curious-container');
     curiousContainer.innerText = stayCurious;
+}
+
+/**
+ * Fetch the Hello greeting from the server and add it to the page.
+ */
+async function showHelloString() {
+    const responseFromServer = await fetch('/hello');
+    const textFromResponse = await responseFromServer.text();
+
+    const helloContainer = document.getElementById('hello-container');
+    helloContainer.innerText = textFromResponse;
+}
+
+/**
+ * Fetch the json string from server and parse it. Randomly add a string to the page.
+ */
+async function showRandomFacts() {
+    const responseFromServer = await fetch('/random');
+    const facts = await responseFromServer.json();
+
+    // Connect to the specified button in HTML
+    const randomFactContainer = document.getElementById('random-fact-container');
+
+    // Create random effect for the content of the button
+    const randomIdx = Math.floor(Math.random() * facts.length);
+    randomFactContainer.innerText = facts[randomIdx];
 }

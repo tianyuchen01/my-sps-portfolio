@@ -45,11 +45,37 @@
           Click <a href="images.html" target="_blank">here</a> to see some photos!
       </p>
 
-      <h3>Miscellaneous</h3>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
+      <h2>Server</h2>
+      <p>
+          Click <a href="/hello">here</a> to see content created by 
+          server code (HelloWorldServlet).
+      </p>
+
+      <!-- add a button which has a greeting in it (from server) -->
+      <button onclick="showHelloString();">hello from server</button>
+      <p id="hello-container"></p>
+
+      <p>
+          Click <a href="/random">here</a> to see content created by 
+          server code (RandomMsgServlet).
+      </p>
+
+      <!-- add a button which has a random fact about me (from server) -->
+      <button onclick="showRandomFacts();">see a random fact about me</button>
+      <p id="random-fact-container"></p>
+
+      <!-- add a button which has a random greeting message (JavaScript) -->
+      <p>Click below to get a random greeting message (completely JavaScript, given):</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+
+      <!-- add a form to the page to ask about visitor's feeling -->
+      <form action="/form-handler" method="POST">
+        <p>How are you feeling today?</p>
+        <textarea name="text-input">:D</textarea>
+        <br/>
+        <input type="submit" />
+      </form>
     </div>
   </body>
 </html>
