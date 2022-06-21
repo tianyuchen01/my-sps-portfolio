@@ -77,11 +77,16 @@
         <input type="submit" />
       </form>
 
+      <h2>Contact Me</h2>
       <!-- add a form to the page to ask about visitor's contact information -->
       <form action="/store-contact-info" method="POST">
         <p>Feel free to leave your contact information here:</p>
-        <textarea name="contact-input"></textarea>
-        <br/>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name-input" placeholder="First (Middle) Last"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email-input" placeholder="Enter your Email here"><br>
+        <label for="message">Leave a message here:</label><br>
+        <textarea id="message" name="message-input"></textarea><br>
         <input type="submit" />
       </form>
 
