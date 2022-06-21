@@ -11,24 +11,20 @@
       <h1>Tianyu Chen's Portfolio</h1>
       <img src="/images/Personal_picture.jpg" width="200">
       <p>
+        <a href="https://www.linkedin.com/in/tianyu-chen-a07951239/" 
+        target="_blank">LinkedIn</a> | <a href="https://github.com/tianyuchen01" 
+        target="_blank">GitHub</a> | 📧tchen@sps-program.com
+      </p>
+      <p>
           Hello! My name is Tianyu Chen. Welcome to my portfolio!
       </p>
       <button onclick="showStayCurious()">Click here to see some magic!</button>
       <div id="curious-container"></div>
 
-      <h2>About Me</h2>
+      <h2>Introduction</h2>
       <p>
           I'm currently a second-year undergraduate student at the 
           University of California, San Diego, majoring in Computer Science.
-      </p>
-
-      <h2>My Profile Links</h2>
-      <p>
-          Here is my <a href="https://www.linkedin.com/in/tianyu-chen-a07951239/" 
-          target="_blank">LinkedIn</a>.
-      </p>
-      <p>
-          Here is my <a href="https://github.com/tianyuchen01" target="_blank">GitHub</a>.
       </p>
 
       <h2>My Projects</h2>
@@ -37,61 +33,30 @@
           techniques using various data structures to compress and decompress files.
       </p>
 
-      <h2>Interesting Stuff</h2>
+      <h2>Personal Stuff</h2>
       <p>
-          I love to take photos of foods and beautiful places and things.
-      </p>
-      <p>
-          Click <a href="images.html" target="_blank">here</a> to see some photos!
-      </p>
-
-      <h2>Server</h2>
-      <p>
-          Click <a href="/hello">here</a> to see content created by 
-          server code (HelloWorldServlet).
-      </p>
-
-      <!-- add a button which has a greeting in it (from server) -->
-      <button onclick="showHelloString();">hello from server</button>
-      <p id="hello-container"></p>
-
-      <p>
-          Click <a href="/random">here</a> to see content created by 
-          server code (RandomMsgServlet).
+          I love to take photos of foods and beautiful places and things. Click 
+          <a href="images.html" target="_blank">here</a> to see some photos!
       </p>
 
       <!-- add a button which has a random fact about me (from server) -->
       <button onclick="showRandomFacts();">see a random fact about me</button>
       <p id="random-fact-container"></p>
 
-      <!-- add a button which has a random greeting message (JavaScript) -->
-      <p>Click below to get a random greeting message (completely JavaScript, given):</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-
-      <!-- add a form to the page to ask about visitor's feeling -->
-      <form action="/form-handler" method="POST">
-        <p>How are you feeling today?</p>
-        <textarea name="text-input">:D</textarea>
-        <br/>
-        <input type="submit" />
-      </form>
-
       <h2>Contact Me</h2>
       <!-- add a form to the page to ask about visitor's contact information -->
       <form action="/store-contact-info" method="POST">
         <p>Feel free to leave your contact information here:</p>
-        <label for="name">Name:</label><br>
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name-input" placeholder="First (Middle) Last"><br>
-        <label for="email">Email:</label><br>
+        <label for="email">Email:</label>
         <input type="text" id="email" name="email-input" placeholder="Enter your Email here"><br>
         <label for="message">Leave a message here:</label><br>
         <textarea id="message" name="message-input"></textarea><br>
         <input type="submit" />
       </form>
 
-      <a href="/list-contact-info">Contact Book</a>
-
+      <h2>Feedback</h2>
       <!-- add a form to the page to ask about visitor's feedback -->
       <form action="/store-feedback" method="POST">
         <p>Feel free to leave your feedback or comment for my portfolio here:</p>
@@ -102,7 +67,6 @@
 
       <!-- load feedbacks -->
       <p>See some feedbacks here:</p>
-      <a href="/list-feedback">see JSON</a>
       <ul id="feedback-list"></ul>
     </div>
   </body>

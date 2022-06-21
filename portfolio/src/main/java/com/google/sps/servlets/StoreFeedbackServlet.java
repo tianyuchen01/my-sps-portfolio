@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
-import org.jsoup.safety.Whitelist;
+import org.jsoup.safety.Safelist;
 
 /** Servlet responsible for storing visitors' feedbacks. */
 @WebServlet("/store-feedback")
@@ -21,7 +21,7 @@ public class StoreFeedbackServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Sanitize user input to remove HTML tags and JavaScript.
-    String feedback = Jsoup.clean(request.getParameter("feedback-input"), Whitelist.none());
+    String feedback = Jsoup.clean(request.getParameter("feedback-input"), Safelist.none());
     long timestamp = System.currentTimeMillis();
 
     // Create an instance of Datastore class
