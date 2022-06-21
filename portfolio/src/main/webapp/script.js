@@ -61,3 +61,21 @@ async function showRandomFacts() {
     const randomIdx = Math.floor(Math.random() * facts.length);
     randomFactContainer.innerText = facts[randomIdx];
 }
+
+/** 
+ * Fetch feedbacks from the server and add them to the DOM. 
+ */
+async function loadFeedbacks() {
+    const responseFromServer = await fetch('/list-feedback');
+    const feedbacks = await responseFromServer.json();
+
+    const feedbackList = document.getElementById('feedback-list');
+
+    feedbacks.forEach((feedback) => {
+        // Create list element and add content to it
+        var feedbackElement = document.createElement('li');
+        feedbackElement.appendChild(document.createTextNode(feedback));
+        // Append list element to the unordered list
+        feedbackList.appendChild(feedbackElement);
+    });
+}

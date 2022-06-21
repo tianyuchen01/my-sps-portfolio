@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="loadFeedbacks()">
     <div id="content">
       <h1>Tianyu Chen's Portfolio</h1>
       <img src="/images/Personal_picture.jpg" width="200">
@@ -86,6 +86,19 @@
       </form>
 
       <a href="/list-contact-info">Contact Book</a>
+
+      <!-- add a form to the page to ask about visitor's feedback -->
+      <form action="/store-feedback" method="POST">
+        <p>Feel free to leave your feedback or comment for my portfolio here:</p>
+        <textarea name="feedback-input"></textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+
+      <!-- load feedbacks -->
+      <p>See some feedbacks here:</p>
+      <a href="/list-feedback">see JSON</a>
+      <ul id="feedback-list"></ul>
     </div>
   </body>
 </html>
