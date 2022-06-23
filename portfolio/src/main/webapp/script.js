@@ -13,38 +13,12 @@
 // limitations under the License.
 
 /**
- * Add a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
-/**
  * Add to the page a hard-coded string "Stay curious!"
  */
 function showStayCurious() {
     const stayCurious = "✨Stay curious!✨";
     const curiousContainer = document.getElementById('curious-container');
     curiousContainer.innerText = stayCurious;
-}
-
-/**
- * Fetch the Hello greeting from the server and add it to the page.
- */
-async function showHelloString() {
-    const responseFromServer = await fetch('/hello');
-    const textFromResponse = await responseFromServer.text();
-
-    const helloContainer = document.getElementById('hello-container');
-    helloContainer.innerText = textFromResponse;
 }
 
 /**
@@ -60,4 +34,22 @@ async function showRandomFacts() {
     // Create random effect for the content of the button
     const randomIdx = Math.floor(Math.random() * facts.length);
     randomFactContainer.innerText = facts[randomIdx];
+}
+
+/** 
+ * Fetch feedbacks from the server and add them to the DOM. 
+ */
+async function loadFeedbacks() {
+    const responseFromServer = await fetch('/list-feedback');
+    const feedbacks = await responseFromServer.json();
+
+    const feedbackList = document.getElementById('feedback-list');
+
+    feedbacks.forEach((feedback) => {
+        // Create list element and add content to it
+        var feedbackElement = document.createElement('li');
+        feedbackElement.appendChild(document.createTextNode(feedback));
+        // Append list element to the unordered list
+        feedbackList.appendChild(feedbackElement);
+    });
 }
